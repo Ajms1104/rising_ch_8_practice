@@ -1,7 +1,5 @@
 package com.example.demo.repository.userproduct.entity;
 
-
-import com.example.demo.repository.userproduct.UserRepository;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,11 +24,11 @@ public class User {
     //PK ID
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //DB의 자동생성..?
-    private Integer id;
+    private Integer userId;
 
     //로그인 ID
     @Column(nullable = false, unique = true, length = 10)
-    private String userId;
+    private String id;
 
     //로그인 PW
     @Column(nullable = false)
@@ -45,15 +43,15 @@ public class User {
     private LocalDate deleted_at;
 
 
-    @OneToMany(mappedBy = "User")
+    @OneToMany(mappedBy = "user")
     //유저 & 상품 //노예(부모), 주인(자식)
     private List<Product> products = new ArrayList<>();
 
     //정적 생성 매서드
-    public static User create(String userId, String password) {
+    public static User create(String id, String password) {
         return new User(
             null,
-            userId,
+            id,
             password,
             null,
             null,

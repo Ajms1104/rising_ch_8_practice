@@ -19,7 +19,7 @@ public class UserCreateResponseDto {
 
     public static UserCreateResponseDto from(User entity){
         return new UserCreateResponseDto(
-            entity.getUserId(),
+            entity.getId(),
             entity.getName(),
             entity.getPhone(),
             entity.getEmail()
