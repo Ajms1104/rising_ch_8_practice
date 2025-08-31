@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.controller.dto.UserCreateRequestDto;
-import com.example.demo.controller.dto.UserCreateResponseDto;
+import com.example.demo.controller.dto.User.UserCreateRequestDto;
+import com.example.demo.controller.dto.User.UserCreateResponseDto;
 import com.example.demo.repository.userproduct.UserRepository;
 import com.example.demo.repository.userproduct.entity.User;
 import jakarta.annotation.PostConstruct;
@@ -56,7 +56,7 @@ public class UserService implements UserDetailsService { //유저 관련 총 서
         // 비밀번호 암호화
         String encodedPassword = passwordEncoder.encode(requestDto.getPassword());
 
-        //Dto & Entity 매핑
+        //유저 생성 | Dto & Entity 매핑
         User newUser = User.create(
             requestDto.getId(),
             passwordEncoder.encode(requestDto.getPassword()) //암호화된 비밀번호

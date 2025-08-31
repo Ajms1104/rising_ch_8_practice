@@ -44,7 +44,7 @@ public class Photo {
     private List<PPAllocated> product = new ArrayList<>();
 
     //정적 생성 메서드
-    private static Photo create(String name, String comment, String url, PhotoStatus status ) {
+    public static Photo create(String name, String comment, String url, PhotoStatus status ) {
         return new Photo(
             null,
             name,

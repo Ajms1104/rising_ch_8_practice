@@ -1,14 +1,11 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.controller.dto.UserCreateRequestDto;
-import com.example.demo.controller.dto.UserCreateResponseDto;
-import com.example.demo.repository.userproduct.entity.User;
+import com.example.demo.controller.dto.User.UserCreateRequestDto;
+import com.example.demo.controller.dto.User.UserCreateResponseDto;
 import com.example.demo.service.UserService;
 import jakarta.validation.Valid;
-import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
-import lombok.experimental.FieldDefaults;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 
 public class UserController {
-
     //비밀번호 값이나 아이디 값 오류는 컨트롤러
+
     private final UserService userService;
     @PostMapping("/signup") //ex. /api/users/signup
     public ResponseEntity<UserCreateResponseDto> signup(

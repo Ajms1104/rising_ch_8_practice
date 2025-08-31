@@ -1,9 +1,8 @@
-package com.example.demo.controller.dto;
+package com.example.demo.controller.dto.User;
 
 import com.example.demo.repository.userproduct.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor
