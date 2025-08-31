@@ -22,10 +22,10 @@ public class ProductController {
 
     private final ProductService productService;
 
-    //사진 업로드를 통한 생성
+    //상품 생성 + 이미지
     @PostMapping("")
     public ResponseEntity<ProductCreatResponseDto> createProduct(
-        @Valid
+        @Valid //상품명, 베이스상품명, 사진 오류값에 대한 검증
         @RequestBody
         ProductCreateRequestDto requestDto
     ){

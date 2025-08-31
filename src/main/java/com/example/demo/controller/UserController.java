@@ -23,7 +23,7 @@ public class UserController {
     private final UserService userService;
     @PostMapping("/signup") //ex. /api/users/signup
     public ResponseEntity<UserCreateResponseDto> signup(
-        @Valid //라이브러리 추가
+        @Valid //에서 ID/PW 오류 검증
         @RequestBody
         UserCreateRequestDto requestDto
     ){
