@@ -47,7 +47,7 @@ public class Product {
     @JoinColumn(name = "base_id")
     private Base base;
 
-    @OneToMany(mappedBy = "Product")
+    @OneToMany(mappedBy = "product")
     //상품 & 사진 연결 테이블 //노예(부모) , 주인(자식)
     private List<PPAllocated> ppallocated = new ArrayList<>();
 

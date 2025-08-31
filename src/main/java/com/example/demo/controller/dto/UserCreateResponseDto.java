@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class UserCreateResponseDto {
     //유저 회원가입 반환 dto
 
-    private String userId;
+    private String username ;
     //반환할 때는 비밀번호 주면 안된다..
     private String name;
     private String phone;
@@ -19,7 +19,7 @@ public class UserCreateResponseDto {
 
     public static UserCreateResponseDto from(User entity){
         return new UserCreateResponseDto(
-            entity.getId(),
+            entity.getUsername(),
             entity.getName(),
             entity.getPhone(),
             entity.getEmail()

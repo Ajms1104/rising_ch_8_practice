@@ -3,19 +3,20 @@ package com.example.demo.controller.dto;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 
 @Getter
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class UserCreateRequestDto { //유저 회원가입 요청 Dto
     //최소한 필요한 것
     //아이디
     @NotNull
     @Size(min = 5, max=10, message = "아이디는 5자 이상 10자 이하입니다. ")
-    private String userId;
+    private String id;
 
     //비밀번호
     @NotNull

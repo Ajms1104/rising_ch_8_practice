@@ -28,7 +28,7 @@ public class User {
 
     //로그인 ID
     @Column(nullable = false, unique = true, length = 10)
-    private String id;
+    private String username;
 
     //로그인 PW
     @Column(nullable = false)
@@ -42,16 +42,15 @@ public class User {
     private LocalDate updated_at;
     private LocalDate deleted_at;
 
-
     @OneToMany(mappedBy = "user")
     //유저 & 상품 //노예(부모), 주인(자식)
     private List<Product> products = new ArrayList<>();
 
     //정적 생성 매서드
-    public static User create(String id, String password) {
+    public static User create(String username, String password) {
         return new User(
             null,
-            id,
+            username,
             password,
             null,
             null,

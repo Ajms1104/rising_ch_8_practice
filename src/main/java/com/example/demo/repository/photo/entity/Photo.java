@@ -1,5 +1,6 @@
 package com.example.demo.repository.photo.entity;
 
+import com.example.demo.repository.userproduct.entity.PPAllocated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -34,13 +35,13 @@ public class Photo {
     @Enumerated(EnumType.STRING)
     private PhotoStatus status;
 
-    @OneToMany(mappedBy = "PhotoHistory")
+    @OneToMany(mappedBy = "photo")
     //사진 & 사진 변화저장 테이블 // 노예(부모), 주인(자식)
     private List<PhotoHistory> photoHistory = new ArrayList<>();
 
-    @OneToMany(mappedBy = "Photo")
+    @OneToMany(mappedBy = "photo")
     //사진 & 상품 연결 테이블 //노예(부모), 주인(자식)
-    private List<Photo> photos = new ArrayList<>();
+    private List<PPAllocated> product = new ArrayList<>();
 
     //정적 생성 메서드
     private static Photo create(String name, String comment, String url, PhotoStatus status ) {
